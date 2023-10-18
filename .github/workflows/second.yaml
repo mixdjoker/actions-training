@@ -2,9 +2,10 @@
 name: Second Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["First Workflow"]
+    types:
+      - completed
 
 jobs:
   second_job:
